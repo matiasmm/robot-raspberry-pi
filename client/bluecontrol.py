@@ -1,13 +1,14 @@
-
-
 import curses
 import serial
 import time
 import pygame
 
-pygame.init()
+from config import CLIENT_BLUETOOTH_DEVICE
 
-port  = serial.Serial('/dev/cu.HC-06-DevB', 9600, bytesize=serial.EIGHTBITS)
+pygame.init()
+screen = pygame.display.set_mode((400, 300))
+
+port  = serial.Serial(CLIENT_BLUETOOTH_DEVICE, 9600, bytesize=serial.EIGHTBITS)
 
 done = False
 send = None
